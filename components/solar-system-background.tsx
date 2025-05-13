@@ -217,13 +217,13 @@ export function SolarSystemBackground() {
 
       planets.forEach((planet) => {
         planet.geometry.dispose()
-        ;(planet.material as THREE.Material).dispose()
+          ; (planet.material as THREE.Material).dispose()
         scene.remove(planet)
       })
 
       planetOrbits.forEach((orbit) => {
         orbit.geometry.dispose()
-        ;(orbit.material as THREE.Material).dispose()
+          ; (orbit.material as THREE.Material).dispose()
         scene.remove(orbit)
       })
 
@@ -232,5 +232,7 @@ export function SolarSystemBackground() {
     }
   }, [])
 
-  return <div ref={containerRef} className="fixed inset-0 bg-gradient-to-b from-[#030014] via-[#0A0A2A] to-[#030014]" />
+  return <div ref={containerRef} style={{
+    backgroundColor: "rgba(87, 69, 162, 0.4)", // navy blue with 30% opacity
+  }} className="fixed inset-0 bg-gradient-to-b from-[#030014] via-[#0A0A2A] to-[#030014]" />
 }

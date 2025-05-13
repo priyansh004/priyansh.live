@@ -13,13 +13,9 @@ import TechSkills from "@/components/Skills"
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen w-full overflow-hidden">
+    <div className="relative container min-h-screen w-full overflow-hidden">
       {/* Interactive Space Background */}
-      <div>
-        <SolarSystemBackground />
-
-      </div>
-      <div
+       {/* <div className="inset-0"
         style={{
           position: "absolute",
           top: 0,
@@ -29,20 +25,26 @@ export default function Home() {
           backgroundColor: "rgba(87, 69, 162, 0.4)", // navy blue with 30% opacity
           zIndex: 1,
         }}
-      ></div>
+      ></div> */}
+      <div>
+        <SolarSystemBackground />
+
+      </div>
+
+     
       {/* Hero Section */}
       <section className="relative z-10 min-h-[90vh] flex items-center">
         <div className="container px-4">
           <div className="max-w-4xl mx-auto text-center">
             <div className="mb-8">
               <Avatar className="h-32 w-32 mx-auto border-4 border-white/10 shadow-glow">
-                <AvatarImage src="https://github.com/priyansh004.png" alt="Profile" />
+                <AvatarImage src="https://github.com/priyansh004.png" alt="PC" />
                 <AvatarFallback className="bg-gradient-to-br from-gray-900 to-black text-2xl">JD</AvatarFallback>
               </Avatar>
             </div>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 text-white">
+            <h1 className="text-5xl md:text-7xl font-extrabold  mb-6 text-white">
               Priyansh Chauhan
-              <span className="block text-2xl md:text-3xl mt-2 text-zinc-200">Software Developer & Designer</span>
+              <span className="block text-2xl md:text-4xl mt-4 text-zinc-200">Software Developer and Designer</span>
             </h1>
             <p className="text-xl font-semibold text-zinc-200 mb-8 max-w-2xl mx-auto">
               I create elegant digital experiences that solve real problems. Specializing in web and mobile development

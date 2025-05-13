@@ -25,7 +25,7 @@ export default function RootLayout({
       <body className={`${SpaceFont.className} bg-[#030014] text-white antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <SidebarProvider>
-            <div className="flex min-h-screen">
+            <div className="flex min-h-screen mx-auto  ">
               <PortfolioSidebar />
               <div className="flex-1 flex flex-col">
                 <SiteHeader />
