@@ -75,7 +75,7 @@ export function ProjectShowcase() {
                         ))}
                       </div>
                       <div className="flex gap-2">
-                        <Button
+                        {project.githubLink && <Button
                           variant="outline"
                           size="sm"
                           className="flex-1 bg-black/60 border-white/20 text-white hover:bg-white/10"
@@ -85,27 +85,30 @@ export function ProjectShowcase() {
                             <Github className="mr-2 h-4 w-4" />
                             Code
                           </a>
-                        </Button>
-                        <Button
+                        </Button>}
+                        {project.liveLink && <Button
                           variant="default"
                           size="sm"
                           className="flex-1 bg-white text-black hover:bg-zinc-200"
                           asChild
                         >
-                          <Link href={`/projects/${project.id}`}>
+                          <Link href={project.liveLink}>
                             <ExternalLink className="mr-2 h-4 w-4" />
                             Live
                           </Link>
                         </Button>
+}
                       </div>
                     </div>
                   </div>
                   <Image
-                    src={project.images[0] || "/placeholder.svg"}
-                    alt={project.title}
-                    fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
+  src={project.images[0] || "/placeholder.svg"}
+  alt={project.title}
+  fill
+  className="w-full h-auto object-cover aspect-video transition-transform duration-700 group-hover:scale-110"
+/>
+
+
                 </div>
                 <div className="p-5 space-y-3">
                   <h3 className="text-xl font-bold text-white group-hover:text-blue-400 transition-colors">

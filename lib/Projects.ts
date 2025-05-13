@@ -10,10 +10,11 @@ export const projectsData: Project[] = [
             "EquipLog is a specialized mobile application developed for Gtek Corp Pvt. Ltd., designed to read, process, and visualize data from FAT16-based data logger devices used in the chemical and pharmaceutical industries. The app uses the libaums library (based on JNode) to interface with USB devices, display file contents (JSON and PDF), and sync data with GtekCloud. It processes uploaded data locally using WatermelonDB and provides intuitive visualizations, tabular views, and insights to users.",
         shortDescription: "A React Native + Kotlin-based mobile app to visualize and sync data from FAT16-based USB data loggers.",
         images: [
-            "/images/equiplog/home-screen.png",
-            "/images/equiplog/device-data.png",
-            "/images/equiplog/graphs.png",
-            "/images/equiplog/pdf-preview.png"
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747162832/4_xqu1pw.jpg",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747162832/5_cyen37.jpg",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747162831/6_rg53yk.jpg",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747162831/7_wxvfbb.jpg",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747162831/8_eu3zbr.jpg"
         ],
         tags: ["React Native", "Android", "Kotlin", "libaums", "SQLite", "FAT16", "WatermelonDB", "D3.js"],
         category: "Mobile Application",
@@ -42,13 +43,13 @@ export const projectsData: Project[] = [
             "MyTrueTrader is a comprehensive brokerage management platform that allows brokers, leaders, and admins to manage orders, transactions, client data, and team assignments efficiently. Built with React, Node.js, and Tailwind CSS, it supports full authentication (JWT-based), role management, and secure online payments via PhonePe API. It also features automated email notifications via EmailJS, a robust MySQL database, Firebase integration, and is hosted on AWS EC2 with Elastic IP, monthly DB backups, and enhanced security.",
         shortDescription: "A full-stack brokerage dashboard with payments, multi-role login, AWS hosting, and automation.",
         images: [
-            "/images/mytruetrader/dashboard.png",
-            "/images/mytruetrader/payment-screen.png",
-            "/images/mytruetrader/login-role-based.png",
-            "/images/mytruetrader/email-notifications.png"
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747161251/truetrader1_sr11lt.png",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747161250/truetrader2_sqztnw.png",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747161251/truetrader3_hf5a8d.png",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747161251/truetrader4_kkkyei.png"
         ],
-        liveLink: "https://mytruetrader.example.com",
-        githubLink: "https://github.com/priyansh1712/mytruetrader",
+        liveLink: "https://mytruetrader.com",
+        // githubLink: "https://github.com/priyansh1712/mytruetrader",
         tags: ["React", "Node.js", "Tailwind", "MySQL", "Firebase", "JWT", "PhonePe API", "EmailJS", "AWS"],
         category: "Web Application",
         features: [
@@ -82,13 +83,10 @@ export const projectsData: Project[] = [
         shortDescription:
             "A React Native app for configuring ESP32 data loggers, retrieving real-time sensor data, and managing cloud endpoints.",
         images: [
-            "/images/esp32logger/dashboard.png",
-            "/images/esp32logger/sensor-data.png",
-            "/images/esp32logger/settings.png",
-            "/images/esp32logger/cloud-config.png"
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747162655/1_gspdcj.jpg",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747162654/2_fbwm0v.jpg",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747162653/3_zckrze.jpg",
         ],
-        liveLink: "https://github.com/priyansh1712/esp32-logger-app", // placeholder for live link
-        githubLink: "https://github.com/priyansh1712/esp32-logger-app",
         tags: ["React Native", "ESP32", "IoT", "Microcontroller", "Sensor Data", "CO2", "Temperature", "Humidity"],
         category: "Mobile Application",
         features: [
@@ -119,12 +117,12 @@ export const projectsData: Project[] = [
         shortDescription: "A blog, news, and event platform with role-based modules, Firebase auth, and point-based engagement.",
         images: [
             "https://res.cloudinary.com/dn856fb5e/image/upload/v1747136543/saffair1_bkmax9.png",
-            "/images/saffair/blog-editor.png",
-            "/images/saffair/event-list.png",
-            "/images/saffair/admin-panel.png"
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747161254/saffair2_qmxzsh.png",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747161251/saffair3_c4hehw.png",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747161251/saffair4_rnsktc.png"
         ],
-        liveLink: "https://saffair.example.com",
-        githubLink: "https://github.com/priyansh1712/saffair",
+        liveLink: "https://saffair.in/",
+        // githubLink: "https://github.com/priyansh1712/saffair",
         tags: ["React", "Node.js", "Firebase", "Tailwind CSS", "Blogging", "News", "Events"],
         category: "Web Platform",
         features: [
@@ -160,8 +158,6 @@ export const projectsData: Project[] = [
             "https://res.cloudinary.com/dn856fb5e/image/upload/v1747136869/martbox3_mojihv.png",
             "https://res.cloudinary.com/dn856fb5e/image/upload/v1747137047/martbox4_qi05d2.png"
         ],
-        liveLink: "https://martbox.example.com",
-        githubLink: "https://github.com/yourusername/martbox-ecommerce",
         tags: ["React", "Node.js", "MongoDB", "SCSS", "Redux", "Full Stack"],
         category: "Web Application",
         features: [
@@ -190,10 +186,7 @@ export const projectsData: Project[] = [
         shortDescription: "Google Classroom alternative built with Next.js, SCSS, and MongoDB.",
         images: [
             "https://res.cloudinary.com/dn856fb5e/image/upload/v1747136542/classmanger1_dlvu5w.jpg",
-            "/images/classmanager/classroom.png",
-            "/images/classmanager/assignment.png"
         ],
-        githubLink: "https://github.com/yourusername/classmanager",
         tags: ["Next.js", "MongoDB", "SCSS", "Classroom", "Full Stack"],
         category: "Web Application",
         features: [

@@ -19,6 +19,7 @@ import {
     BookOpen
 } from "lucide-react"
 import { projectsData } from "@/lib/Projects"
+import Link from "next/link"
 
 // Define TypeScript interfaces for project data
 interface Testimonial {
@@ -343,11 +344,11 @@ export default function ProjectDetails() {
                                 </div>
                             </Card>
 
-                            <Card className="p-6 bg-black/40 backdrop-blur-md border border-white/10">
+                            {(currentProject.liveLink || currentProject.githubLink) && <Card className="p-6 bg-black/40 backdrop-blur-md border border-white/10">
                                 <h2 className="text-xl font-bold text-white mb-4">Project Links</h2>
 
                                 <div className="space-y-3">
-                                    <Button
+                                    {currentProject.liveLink && <Button
                                         variant="default"
                                         className="w-full bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center"
                                         asChild
@@ -356,9 +357,9 @@ export default function ProjectDetails() {
                                             <ExternalLink className="mr-2 h-4 w-4" />
                                             View Live Project
                                         </a>
-                                    </Button>
+                                    </Button>}
 
-                                    <Button
+                                    {currentProject.githubLink && <Button
                                         variant="outline"
                                         className="w-full border-white/20 text-white hover:bg-white/10 flex items-center justify-center"
                                         asChild
@@ -367,9 +368,10 @@ export default function ProjectDetails() {
                                             <Github className="mr-2 h-4 w-4" />
                                             View Source Code
                                         </a>
-                                    </Button>
+                                    </Button>}
                                 </div>
                             </Card>
+                            }
 
                             {/* <Card className="p-6 bg-black/40 backdrop-blur-md border border-white/10">
                                 <h2 className="text-xl font-bold text-white mb-4">Documentation</h2>
@@ -401,7 +403,7 @@ export default function ProjectDetails() {
                     </div>
 
                     {/* Related Projects */}
-                    
+
                     <div className="mt-16">
                         {/* <h2 className="text-3xl font-bold text-white mb-8">Related Projects</h2>
 
@@ -484,17 +486,20 @@ export default function ProjectDetails() {
 
                         {/* View All Projects Button */}
                         <div className="flex justify-center mt-10">
+                        <Link href="/#projects">
+
                             <Button
-                                onClick={goBack}
+                                // onClick={goBack}
                                 variant="outline"
                                 className="border-white/20 text-white hover:bg-white/10 px-8"
                             >
                                 View All Projects
                             </Button>
+                            </Link>
                         </div>
                     </div>
 
-                    
+
                 </motion.div>
             </div>
         </div>
