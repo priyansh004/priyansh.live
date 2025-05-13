@@ -1,6 +1,6 @@
 "use client"
 
-import { Home, User, Code, Wrench, Send, FileText, Github, Mail, Linkedin, TwitterIcon, InstagramIcon, CodeIcon, SunMedium, LucideSignalMedium, Newspaper } from "lucide-react"
+import { Home, User, Code, Wrench, Send, FileText, Github, Mail, Linkedin, TwitterIcon, InstagramIcon, CodeIcon, SunMedium, LucideSignalMedium, Newspaper, Briefcase } from "lucide-react"
 import Link from "next/link"
 import {
   Sidebar,
@@ -15,17 +15,19 @@ import {
   SidebarGroupLabel,
   SidebarSeparator,
 } from "@/components/ui/sidebar"
+import Image from "next/image"
 
 export function PortfolioSidebar() {
   return (
     <Sidebar variant="floating" collapsible="icon" className="border-r border-white/10">
       <SidebarHeader className="flex items-center justify-center p-4">
         <div className="relative">
-          <div className="absolute -inset-1 rounded-full bg-white/5 blur-sm"></div>
-          <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-black border border-white/10">
+          <div className="absolute -inset-1 rounded-full  blur-sm"></div>
+          {/* <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-black border border-white/10">
             <span className="font-bold text-white text-xl">JD</span>
-          </div>
-        </div>
+          </div> */}
+    <Image src="/tlogo.png" alt="Logo" width={100} height={100} />
+    </div>
       </SidebarHeader>
       <SidebarContent className="bg-black/60 backdrop-blur-md">
         <SidebarGroup>
@@ -45,6 +47,14 @@ export function PortfolioSidebar() {
                   <Link href="#about">
                     <User className="text-blue-400" />
                     <span>About</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild tooltip="About" className="hover:bg-white/10 data-[active=true]:bg-white/10">
+                  <Link href="#experience">
+                    <Briefcase className="text-blue-400" />
+                    <span>Experiance</span>
                   </Link>
                 </SidebarMenuButton>
               </SidebarMenuItem>

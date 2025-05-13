@@ -10,6 +10,12 @@ import { Label } from "@/components/ui/label"
 import { Calendar, Mail, MapPin, Phone, Send } from "lucide-react"
 import { motion } from "framer-motion"
 import CalEmbed from "@calcom/embed-react";
+import emailjs from '@emailjs/browser'
+
+// replace these with your actual EmailJS credentials
+const SERVICE_ID:any = process.env.SERVICE_ID
+const TEMPLATE_ID:any = process.env.TEMPLATE_ID
+const PUBLIC_KEY:any = process.env.PUBLIC_KEY
 
 export function ContactSection() {
   const [formState, setFormState] = useState({
@@ -32,22 +38,28 @@ export function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false)
-      setIsSubmitted(true)
-      setFormState({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+    const formDataWithTime = {
+      ...formState,
+      time: new Date().toLocaleString(), // add time field
+    }
+    emailjs.send(SERVICE_ID, TEMPLATE_ID, formDataWithTime, PUBLIC_KEY)
+      .then(() => {
+        setIsSubmitting(false)
+        setIsSubmitted(true)
+        setFormState({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        })
+        // Reset success message
+        setTimeout(() => setIsSubmitted(false), 5000)
       })
-
-      // Reset success message after 5 seconds
-      setTimeout(() => {
-        setIsSubmitted(false)
-      }, 5000)
-    }, 1500)
+      .catch((error:any) => {
+        setIsSubmitting(false)
+        console.error("EmailJS error:", error)
+        alert("Failed to send email. Please try again.")
+      })
   }
 
   const [isOpen, setIsOpen] = useState(false);

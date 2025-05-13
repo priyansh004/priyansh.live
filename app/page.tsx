@@ -8,6 +8,8 @@ import { TechStack } from "@/components/tech-stack"
 import { ContactSection } from "@/components/contact-section"
 import { ChevronDown } from "lucide-react"
 import Link from "next/link"
+import ExperienceSection from "@/components/Experiance"
+import TechSkills from "@/components/Skills"
 
 export default function Home() {
   return (
@@ -70,16 +72,21 @@ export default function Home() {
                     <h3 className="text-2xl font-bold mb-4 text-white">My Journey</h3>
                     <div className="space-y-4 text-zinc-300">
                       <p>
-                        With over 5 years of experience in software development, I've worked on projects ranging from
-                        small business websites to complex enterprise applications.
+                        I graduated in May 2025 with a degree in Information Technology from CHARUSAT. Throughout my academic years, I focused on practical learning through projects, internships, and hands-on development.
                       </p>
                       <p>
-                        My passion for clean code and intuitive design drives me to create solutions that not only work
-                        flawlessly but are also a joy to use.
+                        Over the past year, I gained 10 months of professional experience through two internships. I worked on both mobile and web-based applications, using technologies like React Native, Kotlin, Node.js, and MongoDB.
                       </p>
                       <p>
-                        When I'm not coding, you can find me exploring space photography, playing chess, or hiking in
-                        the mountains.
+                        Alongside internships, I’ve completed several freelance projects — from dynamic websites to fully functional mobile apps — helping real clients bring their ideas to life.
+                      </p>
+                      <p>
+                        My expertise spans full-stack development, mobile apps, and performance-optimized systems. I enjoy solving complex problems and creating clean, user-friendly interfaces.
+
+
+
+                      </p>
+                      <p>This journey has not only sharpened my technical skills but has also shaped my passion for building meaningful digital experiences.
                       </p>
                     </div>
                   </CardContent>
@@ -108,6 +115,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <ExperienceSection></ExperienceSection>
       </section>
 
       {/* Skills Section */}
@@ -118,7 +126,7 @@ export default function Home() {
             <p className="text-xl text-zinc-400 max-w-2xl mx-auto text-center mb-12">
               Technologies and tools I work with
             </p>
-            <div className="flex flex-wrap justify-center gap-3 mb-12">
+            {/* <div className="flex flex-wrap justify-center gap-3 mb-12">
               {skills.map((skill, index) => (
                 <Badge
                   key={index}
@@ -128,7 +136,7 @@ export default function Home() {
                   {skill}
                 </Badge>
               ))}
-            </div>
+            </div> */}
             <TechStack />
           </div>
         </div>
@@ -164,25 +172,26 @@ export default function Home() {
 const services = [
   {
     title: "Web Development",
-    description: "Responsive websites and web applications built with modern technologies.",
+    description: "I craft fast, scalable, and responsive web applications using modern frameworks like React, Next.js, and Node.js. From landing pages to full-stack systems, I turn ideas into efficient, production-ready code.",
     icon: <span className="text-blue-400">🌐</span>,
   },
   {
-    title: "Mobile Apps",
-    description: "Native and cross-platform mobile applications for iOS and Android.",
+    title: "Mobile App Development",
+    description: "I build cross-platform and native mobile apps using React Native and Kotlin, delivering smooth user experiences on both iOS and Android. My apps are built to scale, perform, and engage.",
     icon: <span className="text-blue-400">📱</span>,
   },
   {
     title: "UI/UX Design",
-    description: "Intuitive and engaging user interfaces with a focus on user experience.",
+    description: "With a keen eye for design and usability, I create user interfaces that are not only visually appealing but also easy to use. I focus on crafting seamless user journeys that convert and retain.",
     icon: <span className="text-blue-400">🎨</span>,
   },
   {
-    title: "Custom Solutions",
-    description: "Tailored software solutions to address your specific business needs.",
+    title: "Custom Software Solutions",
+    description: "Every project is unique — I design and develop custom software tailored to meet specific business goals, using the right mix of technology, architecture, and innovation.",
     icon: <span className="text-blue-400">⚙️</span>,
   },
-]
+];
+
 
 const skills = [
   "JavaScript",

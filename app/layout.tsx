@@ -10,7 +10,9 @@ import { PortfolioSidebar } from "@/components/portfolio-sidebar"
 export const metadata = {
   title: "Priyansh Chauhan - Software Developer & Designer",
   description: "Personal portfolio of John Doe, showcasing web and mobile development projects",
-    generator: 'v0.dev'
+  icons: {
+    icon: "/circle.png", // or .png
+  },
 }
 
 export default function RootLayout({

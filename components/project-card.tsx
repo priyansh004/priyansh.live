@@ -8,7 +8,7 @@ interface ProjectCardProps {
   title: string
   description: string
   image: string
-  liveLink: string
+  liveLink?: string
   githubLink: string
   tags: string[]
 }
