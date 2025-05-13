@@ -33,7 +33,7 @@ export function SolarSystemBackground() {
 
     // Stars
     const starGeometry = new THREE.BufferGeometry()
-    const starCount = 2000
+    const starCount = 40000
 
     const positions = new Float32Array(starCount * 3)
     const sizes = new Float32Array(starCount)

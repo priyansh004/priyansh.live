@@ -8,7 +8,7 @@ import { SidebarProvider } from "@/components/ui/sidebar"
 import { PortfolioSidebar } from "@/components/portfolio-sidebar"
 
 export const metadata = {
-  title: "Priyansh Chauhan - Software Developer & Designer",
+  title: "Priyansh Chauhan - Buildspace",
   description: "Personal portfolio of John Doe, showcasing web and mobile development projects",
   icons: {
     icon: "/circle.png", // or .png

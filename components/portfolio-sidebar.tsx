@@ -20,7 +20,7 @@ import Image from "next/image"
 export function PortfolioSidebar() {
   return (
     <Sidebar variant="floating" collapsible="icon" className="border-r border-white/10">
-      <SidebarHeader className="flex items-center justify-center p-4">
+      <SidebarHeader className="flex pl-12 items-center justify-center p-4">
         <div className="relative">
           <div className="absolute -inset-1 rounded-full  blur-sm"></div>
           {/* <div className="relative flex items-center justify-center w-12 h-12 rounded-full bg-black border border-white/10">
@@ -29,7 +29,7 @@ export function PortfolioSidebar() {
     <Image src="/tlogo.png" alt="Logo" width={100} height={100} />
     </div>
       </SidebarHeader>
-      <SidebarContent className="bg-black/60 backdrop-blur-md">
+      <SidebarContent className="bg-black/60 backdrop-blur-md ">
         <SidebarGroup>
           <SidebarGroupLabel className="text-zinc-400">Navigation</SidebarGroupLabel>
           <SidebarGroupContent>

@@ -1,217 +1,215 @@
-export const projectsData = [
+import { Project } from "@/app/projects/[id]/page";
+
+// Example project data
+export const projectsData: Project[] = [
+    
     {
-      id: 1,
-      title: "Cosmic Explorer",
-      description: "A space visualization app built with Three.js and React that allows users to explore the solar system and beyond in an interactive 3D environment. Features include planet information, space missions timeline, and a star map with constellations.",
-      shortDescription: "A space visualization app built with Three.js and React",
-      images: [
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/cosmic-explorer-1.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/cosmic-explorer-2.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/cosmic-explorer-3.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/cosmic-explorer-4.jpg"
-      ],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com",
-      tags: ["React", "Three.js", "WebGL", "JavaScript", "Framer Motion"],
-      category: "web",
-      completionDate: "June 2024",
-      duration: "3 months",
-      client: "Self-initiated",
-      features: [
-        "Interactive 3D solar system model with accurate orbital mechanics",
-        "Educational information about celestial bodies with high-resolution imagery",
-        "Timeline of past and future space missions with detailed descriptions",
-        "Night sky viewer with constellation identification",
-        "Mobile-responsive design for on-the-go exploration"
-      ],
-      challenges: "Optimizing the 3D rendering performance across different devices while maintaining visual fidelity was the biggest challenge. I implemented level-of-detail systems and texture streaming to ensure smooth performance on lower-end devices.",
-      technologies: {
-        frontend: ["React", "Three.js", "WebGL", "Framer Motion", "TailwindCSS"],
-        backend: ["Node.js", "Express"],
-        deployment: ["Vercel", "AWS S3 for asset storage"]
-      },
-      testimonial: {
-        text: "Cosmic Explorer changed the way I teach astronomy to my students. The interactive visualizations make complex concepts much easier to understand.",
-        author: "Dr. Sarah Johnson, Professor of Astronomy"
-      }
+        id: 1,
+        title: "EquipLog - Mobile App",
+        description:
+            "EquipLog is a specialized mobile application developed for Gtek Corp Pvt. Ltd., designed to read, process, and visualize data from FAT16-based data logger devices used in the chemical and pharmaceutical industries. The app uses the libaums library (based on JNode) to interface with USB devices, display file contents (JSON and PDF), and sync data with GtekCloud. It processes uploaded data locally using WatermelonDB and provides intuitive visualizations, tabular views, and insights to users.",
+        shortDescription: "A React Native + Kotlin-based mobile app to visualize and sync data from FAT16-based USB data loggers.",
+        images: [
+            "/images/equiplog/home-screen.png",
+            "/images/equiplog/device-data.png",
+            "/images/equiplog/graphs.png",
+            "/images/equiplog/pdf-preview.png"
+        ],
+        tags: ["React Native", "Android", "Kotlin", "libaums", "SQLite", "FAT16", "WatermelonDB", "D3.js"],
+        category: "Mobile Application",
+        features: [
+            "USB OTG access for FAT16 file systems using libaums (Kotlin-based)",
+            "Device file parsing: reads JSON + PDF report files",
+            "Local storage and processing using WatermelonDB (SQLite)",
+            "Graphical data visualization for device records",
+            "Display of device metadata and tabular record view",
+            "Cloud sync integration with GtekCloud backend",
+            "Offline-first design with local caching",
+            "Responsive UI using React Native and custom styling"
+        ],
+        challenges:
+            "Handling FAT16 file system compatibility on Android using libaums, integrating native Kotlin code with React Native modules, processing device data reliably offline, and building a smooth UI with performance-optimized SQLite queries for large datasets.",
+        technologies: {
+            frontend: ["React Native", "TypeScript", "CSS Modules"],
+            backend: ["Native Modules (Kotlin)", "libaums", "JNode Concepts"],
+            others: ["WatermelonDB", "SQLite", "PDF Viewer", "USB OTG"]
+        },
     },
     {
-      id: 2,
-      title: "Orbit Mobile App",
-      description: "Cross-platform mobile application for task management with offline capabilities, smart prioritization, and team collaboration features. The app uses a unique orbital visualization system to represent task urgency and importance.",
-      shortDescription: "Cross-platform mobile application for task management with offline capabilities",
-      images: [
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/orbit-app-1.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/orbit-app-2.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/orbit-app-3.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/orbit-app-4.jpg"
-      ],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com",
-      tags: ["React Native", "Firebase", "Redux", "Expo", "TypeScript"],
-      category: "mobile",
-      completionDate: "March 2024",
-      duration: "4 months",
-      client: "TaskForce Inc.",
-      features: [
-        "Intuitive orbital task visualization system based on urgency and importance",
-        "Full offline functionality with seamless sync when connection is restored",
-        "Team collaboration with real-time updates and notifications",
-        "Smart task prioritization using machine learning algorithms",
-        "Cross-platform availability (iOS and Android) with consistent experience"
-      ],
-      challenges: "Building a truly offline-first experience required careful state management and conflict resolution strategies. I implemented a custom state reconciliation algorithm based on CRDTs (Conflict-free Replicated Data Types) to ensure data consistency.",
-      technologies: {
-        frontend: ["React Native", "Redux", "TypeScript", "Expo"],
-        backend: ["Firebase", "Cloud Functions", "Firestore"],
-        deployment: ["App Store", "Google Play Store"]
-      },
-      testimonial: {
-        text: "Orbit has transformed our team's productivity. The intuitive design and reliable offline capabilities make it perfect for our field teams.",
-        author: "Michael Chen, Product Manager at TaskForce Inc."
-      }
+        id: 2,
+        title: "MyTrueTrader - Web Dashboard",
+        description:
+            "MyTrueTrader is a comprehensive brokerage management platform that allows brokers, leaders, and admins to manage orders, transactions, client data, and team assignments efficiently. Built with React, Node.js, and Tailwind CSS, it supports full authentication (JWT-based), role management, and secure online payments via PhonePe API. It also features automated email notifications via EmailJS, a robust MySQL database, Firebase integration, and is hosted on AWS EC2 with Elastic IP, monthly DB backups, and enhanced security.",
+        shortDescription: "A full-stack brokerage dashboard with payments, multi-role login, AWS hosting, and automation.",
+        images: [
+            "/images/mytruetrader/dashboard.png",
+            "/images/mytruetrader/payment-screen.png",
+            "/images/mytruetrader/login-role-based.png",
+            "/images/mytruetrader/email-notifications.png"
+        ],
+        liveLink: "https://mytruetrader.example.com",
+        githubLink: "https://github.com/priyansh1712/mytruetrader",
+        tags: ["React", "Node.js", "Tailwind", "MySQL", "Firebase", "JWT", "PhonePe API", "EmailJS", "AWS"],
+        category: "Web Application",
+        features: [
+            "Role-based authentication system (Admin, Broker, Leader)",
+            "JWT token authentication and protected routes",
+            "PhonePe API integration for secure online transactions",
+            "Dynamic order and transaction tracking dashboard",
+            "Leader-to-broker mapping and hierarchical management",
+            "Email notifications and password management via EmailJS",
+            "Primary MySQL database with secondary Firebase sync for external apps",
+            "Fully hosted on AWS EC2 with Elastic IP and secure SSH access",
+            "Monthly automated MySQL database backups",
+            "Responsive UI with TailwindCSS and component libraries",
+            "Version-controlled with GitHub and deployed using CI/CD practices"
+        ],
+        challenges:
+            "Implementing multi-role login securely with JWT, integrating real-time payments through PhonePe API, managing backup and hosting configurations on AWS, and synchronizing Firebase with MySQL for external app access while ensuring data consistency and performance.",
+        technologies: {
+            frontend: ["React.js", "TailwindCSS", "Component Libraries (e.g., ShadCN, DaisyUI)"],
+            backend: ["Node.js", "Express.js", "JWT", "EmailJS", "MySQL", "Firebase (secondary sync)"],
+            deployment: ["AWS EC2", "Elastic IP", "MySQL Dump Backups", "GitHub", "VS Code", "Postman"],
+            others: ["PhonePe API", "EmailJS", "Secure Auth Flows", "Cloud Backup Scripts"]
+        },
+
     },
     {
-      id: 3,
-      title: "Stellar CMS",
-      description: "Headless content management system with GraphQL API and multi-language support designed for high-performance content delivery. The system includes a powerful editor with custom blocks, asset management, and a robust permissions system.",
-      shortDescription: "Headless content management system with GraphQL API and multi-language support",
-      images: [
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/stellar-cms-1.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/stellar-cms-2.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/stellar-cms-3.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/stellar-cms-4.jpg"
-      ],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com",
-      tags: ["Node.js", "GraphQL", "MongoDB", "React", "Docker"],
-      category: "backend",
-      completionDate: "October 2023",
-      duration: "6 months",
-      client: "ContentStars Ltd.",
-      features: [
-        "Powerful GraphQL API with comprehensive query capabilities",
-        "Multi-language content management with versioning",
-        "Custom content blocks editor with drag-and-drop interface",
-        "Fine-grained permission system with role-based access control",
-        "Docker-based deployment for easy scaling"
-      ],
-      challenges: "Designing a flexible content model that could handle diverse content types while maintaining query performance was complex. I implemented a hybrid storage approach with MongoDB for content and Redis for caching frequently accessed data.",
-      technologies: {
-        frontend: ["React", "Apollo Client", "Draft.js", "Chakra UI"],
-        backend: ["Node.js", "GraphQL", "MongoDB", "Redis", "TypeScript"],
-        deployment: ["Docker", "Kubernetes", "Digital Ocean"]
-      },
-      testimonial: {
-        text: "Stellar CMS has revolutionized our content workflow. The GraphQL API is a joy to work with, and the multilingual capabilities perfectly suit our global audience.",
-        author: "Emma Williams, CTO at ContentStars Ltd."
-      }
+        id: 3,
+        title: "DL wifi – React Native App",
+        description:
+            "A React Native mobile application designed to interface with an ESP32-based data logger. The app communicates with the ESP32 microcontroller over APIs to configure logging parameters, set the cloud endpoint, and retrieve real-time sensor data such as CO₂ levels, temperature, and humidity. Ideal for IoT use cases in environmental monitoring, this app provides a clean UI to manage the logger, view live data streams, and adjust cloud upload settings. It ensures robust and responsive performance for managing remote or embedded sensors.",
+        shortDescription:
+            "A React Native app for configuring ESP32 data loggers, retrieving real-time sensor data, and managing cloud endpoints.",
+        images: [
+            "/images/esp32logger/dashboard.png",
+            "/images/esp32logger/sensor-data.png",
+            "/images/esp32logger/settings.png",
+            "/images/esp32logger/cloud-config.png"
+        ],
+        liveLink: "https://github.com/priyansh1712/esp32-logger-app", // placeholder for live link
+        githubLink: "https://github.com/priyansh1712/esp32-logger-app",
+        tags: ["React Native", "ESP32", "IoT", "Microcontroller", "Sensor Data", "CO2", "Temperature", "Humidity"],
+        category: "Mobile Application",
+        features: [
+            "API integration with ESP32 for data communication",
+            "Real-time sensor monitoring (CO₂, temperature, humidity)",
+            "Set and update cloud endpoints from mobile UI",
+            "Automatic connection and session handling with the device",
+            "Live graph view of sensor data",
+            "Offline data caching and fallback handling",
+            "User-friendly UI built with React Native components",
+            "Secure configuration flow with validation for endpoints",
+            "Custom data refresh intervals and sensor calibration options"
+        ],
+        challenges:
+            "Managing real-time data transfer between ESP32 and mobile without packet loss, optimizing API communication, and maintaining connection stability over local networks or BLE (if applicable). Ensuring cross-platform compatibility and smooth graph rendering on low-end devices was also critical.",
+        technologies: {
+            frontend: ["React Native", "TypeScript", "React Navigation"],
+            backend: ["ESP32 REST APIs"],
+        },
+
+    },
+
+    {
+        id: 4,
+        title: "Saffair – Web app",
+        description:
+            "Saffair is a dynamic and interactive platform where users can write blogs, publish news, comment on posts, and participate in events. Built with React, Tailwind CSS, Node.js, and Firebase, it supports role-based modules for users, admins, and news editors. Firebase handles authentication, storage, and real-time updates. Users can earn points for engagement (blogging, commenting, attending events) which can be redeemed or tracked. Admins can moderate content, manage users, and schedule or host events through a custom admin dashboard.",
+        shortDescription: "A blog, news, and event platform with role-based modules, Firebase auth, and point-based engagement.",
+        images: [
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747136543/saffair1_bkmax9.png",
+            "/images/saffair/blog-editor.png",
+            "/images/saffair/event-list.png",
+            "/images/saffair/admin-panel.png"
+        ],
+        liveLink: "https://saffair.example.com",
+        githubLink: "https://github.com/priyansh1712/saffair",
+        tags: ["React", "Node.js", "Firebase", "Tailwind CSS", "Blogging", "News", "Events"],
+        category: "Web Platform",
+        features: [
+            "User authentication with Firebase Auth (Email/Google)",
+            "Role-based modules for Users, Admins, and News Contributors",
+            "Create, publish, and edit blog posts or news articles",
+            "Commenting system for all posts",
+            "Points and reward system for user engagement",
+            "Event registration and participation tracker",
+            "Admin dashboard to approve users and moderate content",
+            "Responsive UI with Tailwind CSS and real-time Firebase data sync",
+            "Media uploads and storage using Firebase Storage",
+            "Notification system for blog approvals, event reminders, and user actions"
+        ],
+        challenges:
+            "Building a real-time content system with Firebase while ensuring performance and security across different roles (admin, news editor, users). Designing a scalable points system and managing user state efficiently with Firebase’s Firestore and Authentication modules.",
+        technologies: {
+            frontend: ["React.js", "TailwindCSS", "React Router"],
+            backend: ["Node.js", "Firebase Cloud Functions", "Firebase Firestore"],
+            deployment: ["Firebase Hosting", "GitHub", "VS Code", "Postman"],
+            others: ["Firebase Auth", "Firebase Storage", "Role-based Access", "Event Management"]
+        },
+
     },
     {
-      id: 4,
-      title: "Galaxy Portfolio",
-      description: "A responsive portfolio template for creative professionals featuring smooth animations, dark mode, and customizable sections. The template is optimized for performance and accessibility, ensuring an excellent experience for all users.",
-      shortDescription: "A responsive portfolio template for creative professionals",
-      images: [
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/galaxy-portfolio-1.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/galaxy-portfolio-2.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/galaxy-portfolio-3.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/galaxy-portfolio-4.jpg"
-      ],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com",
-      tags: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-      category: "web",
-      completionDate: "January 2024",
-      duration: "2 months",
-      client: "Creative Market",
-      features: [
-        "Smooth page transitions and scroll animations",
-        "Automatic dark/light mode based on user preference with toggle option",
-        "Customizable sections for projects, testimonials, and services",
-        "Integrated contact form with email notifications",
-        "Optimized for accessibility with perfect Lighthouse scores"
-      ],
-      challenges: "Creating smooth animations that work well across devices without impacting performance required careful optimization. I used Intersection Observer and requestAnimationFrame to ensure animations only run when needed and are properly throttled.",
-      technologies: {
-        frontend: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
-        deployment: ["Vercel", "Netlify"]
-      },
-      testimonial: {
-        text: "The Galaxy Portfolio template helped me launch my freelance career with a stunning online presence. My clients are always impressed by the smooth animations and clean design.",
-        author: "Alex Rivera, Freelance Designer"
-      }
+        id: 5,
+        title: "MartBox - ECommerce",
+        description:
+            "MartBox is a full-featured eCommerce platform built with Node.js, React, MongoDB, and SCSS. It offers a seamless online shopping experience with features like product listings, secure checkout, order tracking, and an intuitive admin dashboard for managing inventory, users, and orders. Designed for performance and scalability, MartBox delivers a smooth and responsive experience across devices.",
+        shortDescription: "A complete eCommerce platform with admin dashboard, cart, and secure checkout.",
+        images: [
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747136542/martbox1_dhe8gv.png",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747136869/martbox3_mojihv.png",
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747137047/martbox4_qi05d2.png"
+        ],
+        liveLink: "https://martbox.example.com",
+        githubLink: "https://github.com/yourusername/martbox-ecommerce",
+        tags: ["React", "Node.js", "MongoDB", "SCSS", "Redux", "Full Stack"],
+        category: "Web Application",
+        features: [
+            "User registration and authentication (JWT-based)",
+            "Product browsing and dynamic search",
+            "Shopping cart with quantity adjustments",
+            "Secure checkout with order confirmation",
+            "Order history and tracking for users",
+            "Admin panel to manage products, users, and orders",
+            "Responsive and mobile-friendly design",
+            "SCSS-based modern UI"
+        ],
+        challenges:
+            "Managing secure authentication and authorization across user and admin roles, optimizing MongoDB queries for large product databases, and ensuring smooth state management in the shopping cart across sessions.",
+        technologies: {
+            frontend: ["React.js", "SCSS", "Axios", "React Router"],
+            backend: ["Node.js", "Express", "MongoDB", "Mongoose", "JWT"],
+        },
+
     },
     {
-      id: 5,
-      title: "Nebula E-Commerce",
-      description: "Full-featured e-commerce platform with payment processing, inventory management, and an advanced admin dashboard. The platform includes features like product recommendations, customer reviews, and detailed analytics.",
-      shortDescription: "Full-featured e-commerce platform with payment processing and admin dashboard",
-      images: [
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/nebula-ecommerce-1.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/nebula-ecommerce-2.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/nebula-ecommerce-3.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/nebula-ecommerce-4.jpg"
-      ],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com",
-      tags: ["React", "Node.js", "MongoDB", "Stripe", "Redux"],
-      category: "web",
-      completionDate: "August 2023",
-      duration: "5 months",
-      client: "SpaceCommerce Inc.",
-      features: [
-        "Secure payment processing with multiple payment options",
-        "Real-time inventory management system",
-        "Advanced product filtering and search capabilities",
-        "Customer accounts with order history and saved items",
-        "Comprehensive admin dashboard with sales analytics"
-      ],
-      challenges: "Implementing a secure and seamless checkout process while maintaining performance was challenging. I used optimistic UI updates combined with robust error handling to create a fast yet reliable experience.",
-      technologies: {
-        frontend: ["React", "Redux", "Styled Components", "Framer Motion"],
-        backend: ["Node.js", "Express", "MongoDB", "Redis", "Stripe API"],
-        deployment: ["AWS", "Docker", "GitHub Actions"]
-      },
-      testimonial: {
-        text: "Nebula E-Commerce platform increased our conversion rate by 35% in the first month. The admin dashboard gives us insights we never had before.",
-        author: "Jennifer Lopez, CEO of SpaceCommerce Inc."
-      }
-    },
-    {
-      id: 6,
-      title: "Pulsar Analytics",
-      description: "Data visualization dashboard with real-time analytics and custom reports designed for businesses to gain insights from their operational data. The platform includes interactive charts, automated report generation, and data export capabilities.",
-      shortDescription: "Data visualization dashboard with real-time analytics and custom reports",
-      images: [
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/pulsar-analytics-1.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/pulsar-analytics-2.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/pulsar-analytics-3.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1612345678/pulsar-analytics-4.jpg"
-      ],
-      liveLink: "https://example.com",
-      githubLink: "https://github.com",
-      tags: ["Vue.js", "D3.js", "Python", "PostgreSQL", "FastAPI"],
-      category: "web",
-      completionDate: "May 2023",
-      duration: "4 months",
-      client: "DataInsight Corporation",
-      features: [
-        "Interactive and customizable data visualizations using D3.js",
-        "Real-time data processing with websocket connections",
-        "Automated report generation and scheduling",
-        "Data export in multiple formats (CSV, Excel, PDF)",
-        "User-defined alerts and notifications based on data thresholds"
-      ],
-      challenges: "Handling large datasets while maintaining responsive visualizations required implementing efficient data processing pipelines. I used a combination of server-side aggregation and client-side data transformation to optimize performance.",
-      technologies: {
-        frontend: ["Vue.js", "D3.js", "Vuetify", "Chart.js"],
-        backend: ["Python", "FastAPI", "PostgreSQL", "Redis", "Celery"],
-        deployment: ["Google Cloud Platform", "Kubernetes"]
-      },
-      testimonial: {
-        text: "Pulsar Analytics has become an essential tool for our decision-making process. The real-time insights have helped us identify opportunities we would have otherwise missed.",
-        author: "Robert Kim, CIO at DataInsight Corporation"
-      }
+        id: 6,
+        title: "ClassManager",
+        description:
+            "ClassManager is a full-featured classroom management platform built as an alternative to Google Classroom. It enables teachers and students to seamlessly interact, manage assignments, track progress, and communicate within a secure and intuitive web application.",
+        shortDescription: "Google Classroom alternative built with Next.js, SCSS, and MongoDB.",
+        images: [
+            "https://res.cloudinary.com/dn856fb5e/image/upload/v1747136542/classmanger1_dlvu5w.jpg",
+            "/images/classmanager/classroom.png",
+            "/images/classmanager/assignment.png"
+        ],
+        githubLink: "https://github.com/yourusername/classmanager",
+        tags: ["Next.js", "MongoDB", "SCSS", "Classroom", "Full Stack"],
+        category: "Web Application",
+        features: [
+            "Create and manage virtual classrooms",
+            "Post and submit assignments",
+            "Track student progress and grades",
+            "Role-based access (admin, teacher, student)",
+            "Class discussion and announcements",
+            "Responsive UI for desktop and mobile",
+            "Dark mode support",
+            "Authentication with JWT"
+        ],
+        technologies: {
+            frontend: ["Next.js", "React", "SCSS", "Framer Motion", "ShadCN UI"],
+            backend: ["Next.js", "", "MongoDB", "Mongoose", "JWT Auth"],
+        },
+
     }
-  ]
+];
