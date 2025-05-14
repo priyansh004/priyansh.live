@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { SidebarProvider } from "@/components/ui/sidebar"
 import { PortfolioSidebar } from "@/components/portfolio-sidebar"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata = {
   title: "Priyansh Chauhan - Buildspace",
