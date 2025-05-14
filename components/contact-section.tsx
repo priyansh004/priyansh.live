@@ -13,12 +13,15 @@ import CalEmbed from "@calcom/embed-react";
 import emailjs from '@emailjs/browser'
 
 // replace these with your actual EmailJS credentials
-const SERVICE_ID:any = process.env.SERVICE_ID
-const TEMPLATE_ID:any = process.env.TEMPLATE_ID
-const PUBLIC_KEY:any = process.env.PUBLIC_KEY
+const SERVICE_ID: any = process.env.NEXT_PUBLIC_SERVICE_ID
+const TEMPLATE_ID: any = process.env.NEXT_PUBLIC_TEMPLATE_ID
+const PUBLIC_KEY: any = process.env.NEXT_PUBLIC_PUBLIC_KEY
+
 
 
 export function ContactSection() {
+
+
   const [formState, setFormState] = useState({
     name: "",
     email: "",
@@ -34,7 +37,7 @@ export function ContactSection() {
       [e.target.name]: e.target.value,
     })
   }
-  
+
   useEffect(() => {
     if (PUBLIC_KEY) {
       emailjs.init(PUBLIC_KEY);
@@ -42,7 +45,7 @@ export function ContactSection() {
       console.error('EmailJS public key is missing.');
     }
   }, []);
-  
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -65,7 +68,7 @@ export function ContactSection() {
         // Reset success message
         setTimeout(() => setIsSubmitted(false), 5000)
       })
-      .catch((error:any) => {
+      .catch((error: any) => {
         setIsSubmitting(false)
         console.error("EmailJS error:", error)
         alert("Failed to send email. Please try again.")
