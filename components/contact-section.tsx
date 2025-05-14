@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -16,6 +16,7 @@ import emailjs from '@emailjs/browser'
 const SERVICE_ID:any = process.env.SERVICE_ID
 const TEMPLATE_ID:any = process.env.TEMPLATE_ID
 const PUBLIC_KEY:any = process.env.PUBLIC_KEY
+
 
 export function ContactSection() {
   const [formState, setFormState] = useState({
@@ -33,6 +34,15 @@ export function ContactSection() {
       [e.target.name]: e.target.value,
     })
   }
+  
+  useEffect(() => {
+    if (PUBLIC_KEY) {
+      emailjs.init(PUBLIC_KEY);
+    } else {
+      console.error('EmailJS public key is missing.');
+    }
+  }, []);
+  
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
